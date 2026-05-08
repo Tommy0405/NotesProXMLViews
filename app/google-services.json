@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "53676719806",
+    "firebase_url": "https://notesprofirebase-e6aff-default-rtdb.europe-west1.firebasedatabase.app",
+    "project_id": "notesprofirebase-e6aff",
+    "storage_bucket": "notesprofirebase-e6aff.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:53676719806:android:4c5329054c9f2ad3a868ef",
+        "android_client_info": {
+          "package_name": "com.notes.notesproxmlviews"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAUki2YQu3bO8omF9r-MGLtEMfoU9FNv6E"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
