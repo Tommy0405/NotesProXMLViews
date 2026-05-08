@@ -36,54 +36,192 @@
 
     </RelativeLayout>
 
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:layout_below="@id/title_bar_layout"
-        android:layout_marginVertical="26dp"
-        android:background="@drawable/rounded_corner"
-        android:backgroundTint="@color/white"
-        android:orientation="vertical"
-        android:padding="16dp">
+        android:layout_above="@id/delete_note_text_view_btn"
+        android:layout_marginVertical="16dp">
 
-        <EditText
-            android:id="@+id/notes_title_text"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginVertical="8dp"
-            android:autofillHints="Notes Title"
-            android:hint="@string/title"
-            android:inputType="text"
-            android:padding="12dp"
-            android:textColor="@color/black"
-            android:textSize="20sp"
-            android:textStyle="bold" />
+            android:background="@drawable/rounded_corner"
+            android:backgroundTint="@color/white"
+            android:orientation="vertical"
+            android:padding="16dp">
 
-        <EditText
-            android:id="@+id/notes_content_text"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginVertical="8dp"
-            android:autofillHints="Notes Content"
-            android:gravity="top"
-            android:hint="@string/content"
-            android:inputType="textMultiLine"
-            android:minLines="15"
-            android:padding="12dp"
-            android:textColor="@color/black"
-            android:textSize="20sp" />
+            <EditText
+                android:id="@+id/notes_title_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="8dp"
+                android:autofillHints="Notes Title"
+                android:hint="@string/title"
+                android:inputType="text"
+                android:padding="12dp"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:textStyle="bold" />
 
-    </LinearLayout>
+            <EditText
+                android:id="@+id/notes_content_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="8dp"
+                android:autofillHints="Notes Content"
+                android:gravity="top"
+                android:hint="@string/content"
+                android:inputType="textMultiLine"
+                android:minLines="10"
+                android:padding="12dp"
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+
+            <!-- Imagem da nota -->
+            <ImageView
+                android:id="@+id/iv_note_image"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:background="@android:drawable/editbox_background"
+                android:scaleType="centerCrop"
+                android:visibility="gone" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                android:orientation="horizontal">
+
+                <ImageButton
+                    android:id="@+id/btn_select_image"
+                    android:layout_width="0dp"
+                    android:layout_height="48dp"
+                    android:layout_weight="1"
+                    android:layout_marginEnd="4dp"
+                    android:backgroundTint="#2196F3"
+                    android:scaleType="centerInside"
+                    android:src="@android:drawable/ic_menu_gallery"
+                    android:tooltipText="Adicionar Imagem" />
+
+                <ImageButton
+                    android:id="@+id/btn_remove_image"
+                    android:layout_width="0dp"
+                    android:layout_height="48dp"
+                    android:layout_weight="1"
+                    android:layout_marginStart="4dp"
+                    android:backgroundTint="#F44336"
+                    android:scaleType="centerInside"
+                    android:src="@android:drawable/ic_menu_delete"
+                    android:tooltipText="Remover Imagem"
+                    android:visibility="gone" />
+
+            </LinearLayout>
+
+            <!-- Linha separadora -->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginVertical="12dp"
+                android:background="#CCCCCC" />
+
+            <!-- Controles de Produtividade -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:text="🚀 Ferramentas de Produtividade"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/btn_set_reminder"
+                    android:layout_width="0dp"
+                    android:layout_height="48dp"
+                    android:layout_weight="1"
+                    android:layout_marginEnd="4dp"
+                    android:background="@drawable/button_outline"
+                    android:gravity="center"
+                    android:text="⏰ Lembrete"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/btn_focus_mode"
+                    android:layout_width="0dp"
+                    android:layout_height="48dp"
+                    android:layout_weight="1"
+                    android:layout_marginStart="4dp"
+                    android:background="@drawable/button_outline"
+                    android:gravity="center"
+                    android:text="🎯 Modo Foco"
+                    android:textSize="14sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Duração do Foco: " />
+
+                <EditText
+                    android:id="@+id/et_focus_duration"
+                    android:layout_width="60dp"
+                    android:layout_height="40dp"
+                    android:layout_marginStart="8dp"
+                    android:background="@android:drawable/editbox_background"
+                    android:inputType="number"
+                    android:text="25"
+                    android:textAlignment="center" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
+                    android:text=" minutos" />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tv_reminder_info"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                android:background="@android:drawable/editbox_background"
+                android:padding="8dp"
+                android:textSize="12sp"
+                android:visibility="gone" />
+
+        </LinearLayout>
+
+    </ScrollView>
 
     <TextView
         android:id="@+id/delete_note_text_view_btn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
+        android:layout_marginBottom="16dp"
         android:gravity="center"
+        android:padding="12dp"
         android:text="@string/delete_note"
         android:textColor="#FF0000"
         android:textSize="18sp"
         android:visibility="gone" />
 
 </RelativeLayout>
+

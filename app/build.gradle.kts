@@ -57,6 +57,19 @@ dependencies {
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
 
+    // Para imagens
+    implementation("androidx.activity:activity-ktx:1.8.0")
+    implementation("com.github.bumptech.glide:glide:4.16.0")
+
+    // Para o Modo Foco
+    implementation("androidx.media:media:1.7.0")
+
+    // Para IA local (ML Kit)
+    implementation("com.google.mlkit:entity-extraction:16.0.0")
+
+    // Para notificações de lembrete
+    implementation("androidx.work:work-runtime-ktx:2.9.0")
+
 
 // TODO: Add the dependencies for Firebase products you want to use
 // When using the BoM, don't specify versions in Firebase dependencies
