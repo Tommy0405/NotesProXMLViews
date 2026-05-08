@@ -1,7 +1,6 @@
 package com.notes.notesproxmlviews
 
 import android.Manifest
-import android.content.Context
 import android.media.RingtoneManager
 import android.os.Build
 import android.os.Bundle

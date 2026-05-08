@@ -1,7 +1,7 @@
-plugins{
-    alias(libs.plugins.android.application)
-    alias(libs.plugins.kotlin.android)
-    alias(libs.plugins.google.gms.google.services)
+plugins {
+    id("com.android.application")
+    id("org.jetbrains.kotlin.android")
+    id("com.google.gms.google-services")
 }
 
 android {
@@ -37,41 +37,24 @@ android {
 }
 
 dependencies {
-
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
-    implementation(libs.firebase.auth.ktx)
-    implementation(libs.firebase.auth)
-    implementation(libs.firebase.firestore.ktx)
-    implementation(libs.firebase.firestore)
-    implementation(libs.androidx.credentials)
-    implementation(libs.androidx.credentials.play.services.auth)
-    implementation(libs.googleid)
-    implementation(libs.firebase.database)
-    implementation(libs.firebase.storage)
-    implementation(libs.firebase.messaging)
+
+    // Firebase - sem BoM, com versões específicas
+    implementation("com.google.firebase:firebase-auth:23.0.0")  // ← Versão compatível
+    implementation("com.google.firebase:firebase-firestore:25.0.0")
+    implementation("com.google.firebase:firebase-storage:21.0.0")
+
+    // Imagens
+    implementation("com.github.bumptech.glide:glide:4.16.0")
+
+    // Notificações
+    implementation("androidx.work:work-runtime-ktx:2.9.0")
+
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
-
-    // Para imagens
-    implementation("androidx.activity:activity-ktx:1.8.0")
-    implementation("com.github.bumptech.glide:glide:4.16.0")
-
-    // Para o Modo Foco
-    implementation("androidx.media:media:1.7.0")
-
-    // Para IA local (ML Kit)
-    implementation("com.google.mlkit:entity-extraction:16.0.0")
-
-    // Para notificações de lembrete
-    implementation("androidx.work:work-runtime-ktx:2.9.0")
-
-
-// TODO: Add the dependencies for Firebase products you want to use
-// When using the BoM, don't specify versions in Firebase dependencies
-// https://firebase.google.com/docs/android/setup#available-libraries
 }

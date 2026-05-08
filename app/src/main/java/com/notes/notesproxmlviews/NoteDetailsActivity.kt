@@ -284,8 +284,10 @@ class NoteDetailsActivity : AppCompatActivity() {
             "updatedAt" to Timestamp.now()
         )
 
-        if (currentReminderTime != null) {
-            noteData["reminderTime"] = currentReminderTime
+        // CORREÇÃO: usar uma variável local para evitar smart cast problemático
+        val reminder = currentReminderTime
+        if (reminder != null) {
+            noteData["reminderTime"] = reminder
         }
 
         if (!isEditMode) {
@@ -300,8 +302,9 @@ class NoteDetailsActivity : AppCompatActivity() {
 
         documentReference.set(noteData)
             .addOnSuccessListener {
-                if (currentReminderTime != null) {
-                    scheduleNotification(title, currentReminderTime!!)
+                val reminderForSchedule = currentReminderTime
+                if (reminderForSchedule != null) {
+                    scheduleNotification(title, reminderForSchedule)
                 }
                 Toast.makeText(this, if (isEditMode) "Nota atualizada!" else "Nota criada!", Toast.LENGTH_SHORT).show()
                 finish()
