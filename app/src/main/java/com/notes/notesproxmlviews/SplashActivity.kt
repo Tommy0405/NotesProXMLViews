@@ -10,7 +10,7 @@ import com.google.firebase.auth.FirebaseAuth
 class SplashActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-       // enableEdgeToEdge()
+        // enableEdgeToEdge()
         setContentView(R.layout.activity_spash)
 //        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
 //            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())

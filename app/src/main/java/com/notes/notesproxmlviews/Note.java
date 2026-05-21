@@ -13,7 +13,9 @@ public class Note {
     private String imageUrl;
     private String localImagePath;
     private Timestamp reminderTime;
-    private boolean focusModeActive;
+
+
+    public boolean focusModeActive;
     private int focusDuration;
 
     @ServerTimestamp

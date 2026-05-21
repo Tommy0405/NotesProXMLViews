@@ -32,6 +32,7 @@
             android:background="?attr/selectableItemBackgroundBorderless"
             android:contentDescription="@string/menu_button"
             android:src="@drawable/ic_baseline_menu_24"
+            android:visibility="visible"
             app:tint="@color/white" />
 
     </RelativeLayout>

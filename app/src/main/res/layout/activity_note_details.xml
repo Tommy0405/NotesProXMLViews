@@ -104,6 +104,7 @@
                     android:backgroundTint="#2196F3"
                     android:scaleType="centerInside"
                     android:src="@android:drawable/ic_menu_gallery"
+                    android:visibility="visible"
                     android:tooltipText="Adicionar Imagem" />
 
                 <ImageButton
